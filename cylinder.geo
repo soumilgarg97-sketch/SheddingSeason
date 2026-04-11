@@ -21,3 +21,25 @@ Line(1) = {2, 3}; // Bottom wall (Point 2 to 3)
 Line(2) = {3, 4}; // Outlet wall (Point 3 to 4)
 Line(3) = {4, 5}; // Top wall (Point 4 to 5)
 Line(4) = {5, 2}; // Inlet wall (Point 5 to 2)
+
+// 1. Points on the circle boundary (Radius = d/2)
+Point(6) = {10*d + d/2, 15*d, 0, mesh_size/10}; // Right
+Point(7) = {10*d, 15*d + d/2, 0, mesh_size/10}; // Top
+Point(8) = {10*d - d/2, 15*d, 0, mesh_size/10}; // Left
+Point(9) = {10*d, 15*d - d/2, 0, mesh_size/10}; // Bottom
+
+// 2. Arcs to create the circular boundary
+// Circle(ID) = {StartPoint, CenterPoint, EndPoint};
+Circle(5) = {6, 1, 7}; 
+Circle(6) = {7, 1, 8};
+Circle(7) = {8, 1, 9};
+Circle(8) = {9, 1, 6};
+
+// 1. Group lines into loops
+// Curve Loop(ID) = {Line_IDs};
+Curve Loop(1) = {4, 1, 2, 3};  // The outer rectangle
+Curve Loop(2) = {5, 6, 7, 8};  // The cylinder boundary
+
+// 2. Define the surface (Fluid)
+// Plane Surface(ID) = {Exterior_Loop_ID, Hole_Loop_ID};
+Plane Surface(1) = {1, 2};
