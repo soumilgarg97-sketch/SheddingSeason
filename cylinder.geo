@@ -43,3 +43,12 @@ Curve Loop(2) = {5, 6, 7, 8};  // The cylinder boundary
 // 2. Define the surface (Fluid)
 // Plane Surface(ID) = {Exterior_Loop_ID, Hole_Loop_ID};
 Plane Surface(1) = {1, 2};
+
+// 1. Assign names to the boundaries (Lines)
+Physical Curve("Inlet") = {4};
+Physical Curve("Outlet") = {2};
+Physical Curve("Walls") = {1, 3};   // Top and Bottom grouped together
+Physical Curve("Cylinder") = {5, 6, 7, 8}; // The four circle arcs
+
+// 2. Assign a name to the fluid area (Surface)
+Physical Surface("Fluid") = {1};
