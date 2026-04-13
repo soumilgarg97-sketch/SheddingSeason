@@ -84,10 +84,22 @@ To visualize the results in ParaView:
    - Load `SheddingSeason.foam` and click **Apply**.
    - Change the display field to **U** (Velocity) or **p** (Pressure).
    - Use the **Play** button to watch the vortex street develop.
+  
+
+## 7. License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 8. Acknowledgments
+- **OpenFOAM:** For the robust CFD framework.
+- **Gmsh:** For the unstructured mesh generation.
+- **ParaView:** For the high-fidelity visualization.  
+   
 
 ---
 ---
 ---
+
+
 ### Author
 **Soumil Garg**<br>
 *Student, B.Tech Mechanical Engineering*<br>
