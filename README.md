@@ -93,7 +93,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **OpenFOAM:** For the robust CFD framework.
 - **Gmsh:** For the unstructured mesh generation.
 - **ParaView:** For the high-fidelity visualization.  
-   
+
+## 9. Results
+*Visual results will be updated upon simulation completion.*
+![Vortex Street Prediction](https://via.placeholder.com/800x400?text=Vortex+Shedding+Animation+Placeholder)
 
 ---
 ---
