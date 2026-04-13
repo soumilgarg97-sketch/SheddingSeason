@@ -87,8 +87,10 @@ To visualize the results in ParaView:
 
 ---
 ---
+---
 ### Author
-**Soumil Garg**
-*Student, B.Tech Mechanical Engineering*
-*Indian Institute of Technology, Roorkee*
-[Optional: Link to your LinkedIn or Email]
+**Soumil Garg**<br>
+*Student, B.Tech Mechanical Engineering*<br>
+*Indian Institute of Technology Roorkee, Roorkee*<br>
+📧 [soumilgarg97@gmail.com](mailto:soumilgarg97@gmail.com)<br>
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/soumil-garg-2a99672a3)
