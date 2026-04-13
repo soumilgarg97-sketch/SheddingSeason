@@ -86,5 +86,9 @@ To visualize the results in ParaView:
    - Use the **Play** button to watch the vortex street develop.
 
 ---
+---
 ### Author
-**Soumil**
+**Soumil Garg**
+*Student, B.Tech Mechanical Engineering*
+*Indian Institute of Technology, Roorkee*
+[Optional: Link to your LinkedIn or Email]
