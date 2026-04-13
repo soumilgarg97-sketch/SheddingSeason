@@ -47,3 +47,17 @@ SheddingSeason/
 ├── system/           # Solver & Numerical Control
 ├── mesh/             # Source files (.geo and .msh)
 └── README.md
+## 5. Execution Instructions
+To run this simulation, follow these steps in your OpenFOAM terminal:
+
+Mesh Conversion:
+Convert the Gmsh file into the OpenFOAM polyMesh format:
+gmshToFoam mesh/SheddingSeason.msh
+
+Mesh Validation:
+Verify the mesh quality and ensure the boundaries are recognized:
+checkMesh
+
+Run Solver:
+Start the transient, laminar calculation:
+icoFoam
