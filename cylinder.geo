@@ -84,3 +84,8 @@ Transfinite Curve {9, 10, 11, 12} = num_nodes_radial;
 // 3. MAP AND RECOMBINE
 Transfinite Surface {1, 2, 3, 4};
 Recombine Surface {1, 2, 3, 4};
+
+// Example: Extrude the surface (ID 1) by 0.1 units in Z-direction, 1 layer thick
+Extrude {0, 0, 0.1} { Surface{1}; Layers{1}; Recombine; }
+
+Physical Volume("internal") = {1}; // Replace 1 with the ID of the new volume
