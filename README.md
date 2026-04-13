@@ -13,10 +13,10 @@ $$Re = \frac{U \cdot D}{\nu}$$
 
 | Parameter | Symbol | Value |
 | :--- | :--- | :--- |
-| **Inlet Velocity** | $U$ | $1.0 \, \text{m/s}$ |
-| **Cylinder Diameter** | $D$ | $1.0 \, \text{m}$ |
-| **Kinematic Viscosity** | $\nu$ | $0.01 \, \text{m}^2/\text{s}$ |
-| **Reynolds Number** | $Re$ | $100$ |
+| **Inlet Velocity** | $U$ | 1.0 m/s |
+| **Cylinder Diameter** | $D$ | 1.0 m |
+| **Kinematic Viscosity** | $\nu$ | 0.01 m²/s |
+| **Reynolds Number** | $Re$ | 100 |
 
 ## 3. Numerical Setup
 ### Solver
@@ -33,8 +33,8 @@ $$Re = \frac{U \cdot D}{\nu}$$
 ### Boundary Conditions
 | Patch | Field | Type | Value |
 | :--- | :--- | :--- | :--- |
-| **Inlet_Zone** | $U$ / $p$ | `fixedValue` / `zeroGradient` | $U = (1, 0, 0)$ |
-| **Outlet_Zone** | $U$ / $p$ | `zeroGradient` / `fixedValue` | $p = 0$ |
+| **Inlet_Zone** | $U$ / $p$ | `fixedValue` / `zeroGradient` | U = (1 0 0) |
+| **Outlet_Zone** | $U$ / $p$ | `zeroGradient` / `fixedValue` | p = 0 |
 | **Cylinder_Wall** | $U$ / $p$ | `noSlip` / `zeroGradient` | - |
 | **Upper/Lower** | $U$ / $p$ | `symmetry` | - |
 | **Front/Back** | $U$ / $p$ | `empty` | - |
@@ -47,17 +47,44 @@ SheddingSeason/
 ├── system/           # Solver & Numerical Control
 ├── mesh/             # Source files (.geo and .msh)
 └── README.md
+```
+
 ## 5. Execution Instructions
 To run this simulation, follow these steps in your OpenFOAM terminal:
 
-Mesh Conversion:
-Convert the Gmsh file into the OpenFOAM polyMesh format:
-gmshToFoam mesh/SheddingSeason.msh
+1. **Mesh Conversion**:
+   Convert the Gmsh file into the OpenFOAM polyMesh format:
+   ```bash
+   gmshToFoam mesh/SheddingSeason.msh
+   ```
 
-Mesh Validation:
-Verify the mesh quality and ensure the boundaries are recognized:
-checkMesh
+2. **Mesh Validation**:
+   Verify the mesh quality and ensure the boundaries are recognized:
+   ```bash
+   checkMesh
+   ```
 
-Run Solver:
-Start the transient, laminar calculation:
-icoFoam
+3. **Run Solver**:
+   Start the transient, laminar calculation:
+   ```bash
+   icoFoam
+   ```
+
+## 6. Post-Processing and Visualization
+To visualize the results in ParaView:
+
+1. **Generate Reader File**:
+   Create an empty `.foam` file for ParaView to recognize:
+   ```bash
+   touch SheddingSeason.foam
+   ```
+
+2. **ParaView Analysis**:
+   - Open **ParaView** on Windows.
+   - Load `SheddingSeason.foam` and click **Apply**.
+   - Change the display field to **U** (Velocity) or **p** (Pressure).
+   - Use the **Play** button to watch the vortex street develop.
+
+---
+### Author
+**Soumil**
